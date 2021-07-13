@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onde você mora ?</title>
+    <style>
+        body{
+            background-color: beige;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de Localidade</h1>
+    Em que país você está morando ?: <input type="text" name="txlocal" id="txlocal">
+    <input type="button" value="Pesquisando no MAPA..." onclick="mundo()">
+    <div id="res">
+
+    </div>
+
+    <script>
+        function mundo() { 
+            var p = window.document.querySelector('input#txlocal')
+            var res = window.document.querySelector('div#res')
+            var pais = String(p.value)
+            res.innerHTML = `<p>Vivendo em <strong>${pais}</strong> </p>`
+            if(pais != 'Brasil'){
+                res.innerHTML += 'Você é estrangeiro'
+            }else{
+                res.innerHTML += 'Você é Brasileiro'
+            }
+
+        }
+            </script>
+</body>
+</html>
